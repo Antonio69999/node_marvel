@@ -30,12 +30,15 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
 const persoRouter = require("./routes/personnages");
+const createRouter = require("./routes/form");
 
 app.get("/", (req, res) => {
-  res.send("Welcome On My App!");
+  res.render("index");
 });
 
 app.use("/personnages", persoRouter);
+app.use("/create", createRouter);
+
 
 app.listen(3001, () => {
   console.log("Server is running on port 3000");
