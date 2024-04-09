@@ -35,7 +35,7 @@ const persoRouter = require("./routes/personnages");
 const createRouter = require("./routes/form");
 const updateRouter = require("./routes/update");
 const deleteRouter = require("./routes/delete");
-
+const teamRouter = require("./routes/equipes");
 app.get("/", (req, res) => {
   res.render("index");
 });
@@ -44,6 +44,7 @@ app.use("/personnages", persoRouter);
 app.use("/create", createRouter);
 app.use("/update", updateRouter);
 app.use("/delete", deleteRouter);
+app.use("/equipes", teamRouter);
 
 app.listen(3001, () => {
   console.log("Server is running on port 3000");

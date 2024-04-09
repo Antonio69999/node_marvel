@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="light dark" />
     <link rel="stylesheet" href="css/pico.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <title>Marvel</title>
+    <title>Select Your Team</title>
   </head>
 <body>
   <header>
@@ -14,12 +14,16 @@
   <ul>
     <li><a href="/personnages"><h2>View Characters</h2></a></li>
     <li><a href="/create"><h2>Create Characters</h2></a></li>
-    <li><a href="/equipes"><h2>View Teams</h2></a></li>
   </ul>
 </nav>
 </header>
     <main class="container center-screen">
-    <h1>Welcome</h1>
+    
+    {{#equipe}}
+    <div class="teams">
+    <h3><a href="/equipes/{{id}}">Nom : {{nom}}</a></h3>
+    {{/equipe}}
+    </div>
     </main>
 </body>
 </html>

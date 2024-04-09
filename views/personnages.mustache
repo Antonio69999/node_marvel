@@ -24,6 +24,7 @@
         <p>Nom : {{nom}}</p>
         <p>Description : {{description}}</p>
         <img src="../{{ photo }}" alt="{{ nom }}">
+        <p>Equipe : {{equipe_id}}</p>
         <form action="/delete/{{id}}" method="post">
             <input type="submit" value="Delete">
         </form>
