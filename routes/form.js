@@ -16,16 +16,31 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 router.get("/", (req, res) => {
-  res.render("character-create");
+  db.con.query("SELECT * FROM equipes", (error, results) => {
+    if (error) {
+      console.log(error);
+      res.status(500).send("An error occurred while fetching the data");
+    } else {
+      res.render("character-create", { teams: results });
+    }
+  });
 });
 
 router.post("/create-character", upload.single("photo"), (req, res) => {
   const { nom, description } = req.body;
+  let { equipe_id } = req.body;
   const photo = req.file.path;
 
+  // Check if equipe_id is an empty string
+  if (equipe_id === "") {
+    equipe_id = null;
+  } else {
+    equipe_id = Number(equipe_id);
+  }
+
   db.con.query(
-    "INSERT INTO personnages (nom, description, photo) VALUES (?, ?, ?)",
-    [nom, description, photo],
+    "INSERT INTO personnages (nom, description, photo, equipe_id) VALUES (?, ?, ?, ?)",
+    [nom, description, photo, equipe_id],
     (error, results) => {
       if (error) {
         console.log(error);

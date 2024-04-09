@@ -31,13 +31,16 @@
       Image
       <input type="file" id="photo" name="photo">
     </label>
-{{! 
-    <label for="equipe">
-      Equipe
-      <input type="" id="niveau" name="niveau" placeholder="Niveau">
-  </div> }}
 
-  <!-- Button -->
+<label for="equipe">
+  Equipe
+  <select id="equipe" name="equipe_id">
+    {{#teams}}
+      <option value="{{id}}">{{nom}}</option>
+    {{/teams}}
+  </select>
+</label>
+
   <button type="submit">Submit</button>
 
 </form>
