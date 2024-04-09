@@ -29,7 +29,8 @@ ul {
   width: 100%;
 }
 
-input[type=text], select {
+input[type="text"],
+select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -39,7 +40,7 @@ input[type=text], select {
   box-sizing: border-box;
 }
 
-input[type=submit] {
+input[type="submit"] {
   width: 100%;
   color: white;
   padding: 14px 20px;
@@ -69,4 +70,27 @@ button {
 a {
   text-decoration: none;
   color: red;
+}
+
+.teams a {
+  text-decoration: none;
+  color: white;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  margin: 25px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card a {
+  text-decoration: none;
+  color: black;
 }
