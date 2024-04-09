@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="css/pico.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Update your character</title>
+  </head>
+<body>
+    <main class="container center-screen">
+    <h1>Update Your Character</h1>
+    <form action="/update/{{ personnage.id }}" method="POST" enctype="multipart/form-data">
+
+  <div class="grid">
+
+    <label for="nom">
+      Nom
+      <input type="text" id="nom" name="nom" placeholder="Nom du héro">
+    </label>
+
+    <label for="description">
+      Description
+      <input type="text" id="description" name="description" placeholder="Description">
+    </label>
+
+    <label for="photo">
+      Image
+      <input type="file" id="photo" name="photo">
+    </label>
+
+<label for="equipe">
+  Equipe
+  <select id="equipe" name="equipe_id">
+    {{#equipes}}
+      <option value="{{id}}">{{nom}}</option>
+    {{/equipes}}
+  </select>
+</label>
+
+  <button type="submit">Submit</button>
+
+</form>
+    </main>
+</body>
+</html>
