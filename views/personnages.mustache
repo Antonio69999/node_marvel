@@ -9,13 +9,28 @@
     <title>Marvel</title>
   </head>
 <body>
+  <header>
+  <nav>
+  <ul>
+    <li><a href="/personnages"><h2>View Characters</h2></a></li>
+    <li><a href="/create"><h2>Create Characters</h2></a></li>
+  </ul>
+</nav>
+</header>
   <main class="container">
     <h1>Personnages</h1>
  {{#personnages}}
-        <p>{{id}}</p>
-        <p>{{nom}}</p>
+        <p>Id : {{id}}</p>
+        <p>Nom : {{nom}}</p>
+        <p>Description : {{description}}</p>
         <img src="../{{ photo }}" alt="{{ nom }}">
+        <form action="/delete/{{id}}" method="post">
+            <input type="submit" value="Delete">
+        </form>
+    <a href="/update/{{id}}"><button>Update</button></a>
     {{/personnages}}
     </main>
+      <button><a href="/">Go back</a></button>
+
 </body>
 </html>

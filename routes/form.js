@@ -46,7 +46,7 @@ router.post("/create-character", upload.single("photo"), (req, res) => {
         console.log(error);
         res.status(500).send("An error occurred while inserting the data");
       } else {
-        res.status(200).send("Data inserted successfully");
+        res.status(200).redirect("/personnages");
       }
     }
   );
