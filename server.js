@@ -3,6 +3,8 @@ const mustacheExpress = require("mustache-express");
 const app = express();
 const db = require("./database");
 
+app.use("/uploads", express.static("uploads"));
+
 // db.connect()
 //   .then(() => {
 //     console.log("Database connected");
@@ -38,7 +40,6 @@ app.get("/", (req, res) => {
 
 app.use("/personnages", persoRouter);
 app.use("/create", createRouter);
-
 
 app.listen(3001, () => {
   console.log("Server is running on port 3000");
